@@ -31,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: MyApp-windows
-          path: dist/chatgpt-win32-x64/
+          path: chatgpt-win32-x64/
