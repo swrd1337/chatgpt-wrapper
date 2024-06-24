@@ -49,6 +49,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: chatgpt-windows
-          asset_name: chatgpt-windows.zip
+          asset_path: chatgpt-win32-x64
+          asset_name: chatgpt-win32-x64.zip
           asset_content_type: application/zip
