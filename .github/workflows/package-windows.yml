@@ -1,0 +1,34 @@
+name: Package app for Windows
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Package Application
+        run: npm run compile-win
+
+      - name: Archive Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: MyApp-windows
+          path: dist/chatgpt-win32-x64/
